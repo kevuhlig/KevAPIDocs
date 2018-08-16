@@ -39,8 +39,6 @@ release = '1.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinxcontrib.httpdomain', 
-    'sphinxcontrib.httpexample',
     'sphinx.ext.githubpages'  
 ]
 
