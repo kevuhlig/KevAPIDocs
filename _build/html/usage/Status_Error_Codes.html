@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Status and Error Codes &mdash; API Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Addresses" href="Addresses.html" />
+    <link rel="prev" title="Base Path" href="BasePath.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_Started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasePath.html">Base Path</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Status and Error Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Addresses.html">Addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parcels.html">Parcels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shipments.html">Shipments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandbox Stuff.html">Sandbox Stuff</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Status and Error Codes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/Status_Error_Codes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="status-and-error-codes">
+<h1>Status and Error Codes<a class="headerlink" href="#status-and-error-codes" title="Permalink to this headline">¶</a></h1>
+<p>The Status and Error codes should be on their own standalone page. A standalone code allows you to expand on each code wiht more detail without crowding the other documentation.</p>
+<p>Standard status codes don’t usually need much documentation, but custom status and error codes specific to your API definitely do. Error codes in particular help with troubleshooting bad requests. When documenting the codes, provide descriptions that provide more information, potentially assisting with error recovery.</p>
+<p>With a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, it’s pretty easy to tell if the request is successful because you get back the expected response. But suppose you’re making a <code class="docutils literal notranslate"><span class="pre">POST</span></code>, <code class="docutils literal notranslate"><span class="pre">PUT</span></code>, or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> call, where you’re changing data contained in the resource. How do you know if the request was successfully processed and received by the API? HTTP response codes in the header of the response will indicate whether the operation was successful. Status codes appear in the response header, which you might not see by default. In curl, to get the response header, add the <code class="docutils literal notranslate"><span class="pre">-i</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">I</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?zip=95050%2Cus&amp;appid=fd4698c940c6d1da602a70ac34f0b147&amp;units=imperial&quot;</span>
+</pre></div>
+</div>
+<p>The response header looks as follows:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+Server: openresty
+Date: Mon, 02 Apr 2018 01:14:13 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 441
+Connection: keep-alive
+X-Cache-Key: /data/2.5/weather?units=imperial&amp;zip=95050%2cus
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST
+</pre></div>
+</div>
+<p>Put the codes into a table.</p>
+<table border="1" class="colwidths-given docutils" id="id1">
+<caption><span class="caption-text"><strong>Status and Error Codes</strong></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="13%" />
+<col width="13%" />
+<col width="63%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Title</th>
+<th class="head">Description</th>
+<th class="head">Extra</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>The request was successful.</td>
+<td>fdsa</td>
+</tr>
+<tr class="row-odd"><td>201</td>
+<td>Created</td>
+<td>The resource was successfully created.</td>
+<td>fdfasf</td>
+</tr>
+<tr class="row-even"><td>202</td>
+<td>Async created</td>
+<td>The resource was asynchronously created.</td>
+<td>fff</td>
+</tr>
+<tr class="row-odd"><td>400</td>
+<td>Bad request</td>
+<td>Bad request</td>
+<td>fdsa</td>
+</tr>
+<tr class="row-even"><td>401</td>
+<td>Unauthorized</td>
+<td>Your API key is invalid</td>
+<td>uuu</td>
+</tr>
+<tr class="row-odd"><td>402</td>
+<td>Over quota</td>
+<td>Over plan quota on this endpoint.</td>
+<td>22</td>
+</tr>
+<tr class="row-even"><td>404</td>
+<td>Not found</td>
+<td>The resource does not exist.</td>
+<td>oo</td>
+</tr>
+<tr class="row-odd"><td>422</td>
+<td>Validation error</td>
+<td>A validation error occurred.</td>
+<td>899</td>
+</tr>
+<tr class="row-even"><td>50x</td>
+<td>Internal Server Error</td>
+<td>An error occurred with our API.</td>
+<td>334</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Clearbit - &lt;<a class="reference external" href="https://clearbit.com/docs?python#errors">https://clearbit.com/docs?python#errors</a>&gt;</p>
+<p>Twitter - &lt;<a class="reference external" href="https://developer.twitter.com/en/docs/basics/response-codes">https://developer.twitter.com/en/docs/basics/response-codes</a>&gt;</p>
+<p>MailChimp - &lt;<a class="reference external" href="http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/">http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/</a>&gt;</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Addresses.html" class="btn btn-neutral float-right" title="Addresses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="BasePath.html" class="btn btn-neutral" title="Base Path" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Uhlig.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinxcontrib-httpexample.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

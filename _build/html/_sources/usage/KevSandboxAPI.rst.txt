@@ -1,0 +1,143 @@
+=============
+Addresses
+=============
+
+---------------------
+Create a New Address
+---------------------
+
+.. http:post:: https://api.goshippo.com/addressess/
+
+  Creates a new address object
+
+
+  **Body Parameters**
+
+.. list-table:: 
+   :widths: 15 10 30 30
+   :header-rows: 1
+
+   * - Parameter
+     - Data Type
+     - Required/Optional
+     - Description
+   * - name
+     - string
+     - optional
+     - Name of purchaser
+   * - company
+     - string
+     - optional
+     - Name of company
+   * - street1
+     - string
+     - required
+     - Name of street
+   * - street_no
+     - string
+     - optional
+     - Building number
+   * - street2
+     - optional
+     - string
+     - Optional street name
+
+**Example Request**:
+
+
+   .. sourcecode:: curl
+
+      POST https://api.goshippo.com/addresses/ HTTP/1.1
+      Accept: application/json 
+
+      curl https://api.goshippo.com/addresses/ \
+        -H "Authorization: ShippoToken <API_TOKEN>" \
+        -d name="Shawn Ippotle" \
+        -d company="Shippo" \
+        -d street1="215 Clayton St." \
+        -d street2="" \
+        -d city="San Francisco" \
+        -d state="CA" \
+        -d zip=94117 \
+        -d country="US" \
+        -d phone="+1 555 341 9393" \
+        -d email="shippotle@goshippo.com"\
+        -d is_residential=True\
+        -d metadata="Customer ID 123456"
+
+  **Example Response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      [
+        {
+          "post_id": 12345,
+          "author_id": 123,
+          "tags": ["server", "web"],
+          "subject": "I tried Nginx"
+        },
+        {
+          "post_id": 12346,
+          "author_id": 123,
+          "tags": ["html5", "standards", "web"],
+          "subject": "We go to HTML 5"
+        }
+      ]
+
+
+-------------------
+Retrieve an Address
+-------------------
+
+.. http:get:: https://api.goshippo.com/addressess/(address_object_id)
+
+  Retrieves an existing address by object ID
+
+
+**Query Parameters**
+
+   =======  =======================  ==============================================  =============================================================================
+   Name      Data Type               Required/Optional                                Description
+   =======  =======================  ==============================================  =============================================================================
+   days     integer				     Optional									     Number of days for which to return the surf conditions. Maximum is 7.  If not entering the :code:`days` parameter, then the default returned is three (3) days.  
+   units	number                   Optional									     Imperial (feet, knots) or Metric (centimeters and kilometers per hour). 
+   hour		Number                   Optional									     Returns surf conditions for the hour(s) specified. Hour must be in 24-hour format. If not entering the hour, then the response returns the conditions for each hour of each day. 
+   =======  =======================  ==============================================  =============================================================================
+
+
+   :statuscode 200: Successful response. 
+   :statuscode 404: Not found response. 
+   
+
+   **Example Request**:
+
+   .. sourcecode:: http
+
+      GET /surfreport/3566 HTTP/1.1
+      Host: api.surf.org
+      Accept: application/json 
+
+   **Example Response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      [
+        {
+          "post_id": 12345,
+          "author_id": 123,
+          "tags": ["server", "web"],
+          "subject": "I tried Nginx"
+        },
+        {
+          "post_id": 12346,
+          "author_id": 123,
+          "tags": ["html5", "standards", "web"],
+          "subject": "We go to HTML 5"
+        }
+      ]

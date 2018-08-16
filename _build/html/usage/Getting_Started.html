@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; API Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Base Path" href="BasePath.html" />
+    <link rel="prev" title="Overview" href="Overview.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#signing-up-for-an-account-maybe">Signing up for an account (Maybe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisite-information-before-you-start-maybe">Prerequisite Information / Before you Start (Maybe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-familiar-with-the-app-maybe">Get familiar with the App (Maybe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication-and-authorization">Authentication and Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-s-included-in-an-api-request">What’s Included in an API Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-request">Example Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#try-out-request-with-postman">Try out Request with Postman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#responses">Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rate-limits">Rate Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-of-getting-started">Examples of Getting Started</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BasePath.html">Base Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Status_Error_Codes.html">Status and Error Codes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Addresses.html">Addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parcels.html">Parcels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shipments.html">Shipments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandbox Stuff.html">Sandbox Stuff</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/Getting_Started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>The Getting Started topic is somewhat like the typical Hello World tutorial in developer documentation, but with an API. The tutorial holds a user’s hand from start to finish in producing the simplest possible output with the system. For Hello World tutorials, the simplest output might just be a message that says “Hello World.” For an API, it might be a successful response from the most basic request.</p>
+<p>How long would it take a developer to get the simplest possible response using the API? The developer needs to get a sense of how it works, and feel productive.</p>
+<p>As an example, you could take a common, basic use case for your API and show how to construct a request, as well as what response returns. If a developer can make that call successfully, he or she can probably be successful with the other calls too.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#signing-up-for-an-account-maybe" id="id3">Signing up for an account (Maybe)</a></li>
+<li><a class="reference internal" href="#prerequisite-information-before-you-start-maybe" id="id4">Prerequisite Information / Before you Start (Maybe)</a></li>
+<li><a class="reference internal" href="#get-familiar-with-the-app-maybe" id="id5">Get familiar with the App (Maybe)</a></li>
+<li><a class="reference internal" href="#authentication-and-authorization" id="id6">Authentication and Authorization</a></li>
+<li><a class="reference internal" href="#what-s-included-in-an-api-request" id="id7">What’s Included in an API Request</a></li>
+<li><a class="reference internal" href="#example-request" id="id8">Example Request</a></li>
+<li><a class="reference internal" href="#try-out-request-with-postman" id="id9">Try out Request with Postman</a></li>
+<li><a class="reference internal" href="#responses" id="id10">Responses</a></li>
+<li><a class="reference internal" href="#rate-limits" id="id11">Rate Limits</a></li>
+<li><a class="reference internal" href="#examples-of-getting-started" id="id12">Examples of Getting Started</a></li>
+</ul>
+</div>
+<div class="section" id="signing-up-for-an-account-maybe">
+<h2><a class="toc-backref" href="#contents">Signing up for an account (Maybe)</a><a class="headerlink" href="#signing-up-for-an-account-maybe" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="prerequisite-information-before-you-start-maybe">
+<h2><a class="toc-backref" href="#contents">Prerequisite Information / Before you Start (Maybe)</a><a class="headerlink" href="#prerequisite-information-before-you-start-maybe" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="get-familiar-with-the-app-maybe">
+<h2><a class="toc-backref" href="#contents">Get familiar with the App (Maybe)</a><a class="headerlink" href="#get-familiar-with-the-app-maybe" title="Permalink to this headline">¶</a></h2>
+<p>If you’re not familiar with the App, get familiar with it and experiment with the user interface before starting to code.</p>
+</div>
+<div class="section" id="authentication-and-authorization">
+<h2><a class="toc-backref" href="#contents">Authentication and Authorization</a><a class="headerlink" href="#authentication-and-authorization" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Authentication – proves correct identity.</li>
+<li>Authorization – allows a certain action.</li>
+</ul>
+<p>In API documentation, you don’t need to explain how your authentication works in detail to outside users. In fact, not explaining the internal details of your authentication process is probably a best practice as it would make it harder for hackers to abuse the API. However, you do need to explain some basic information such as:</p>
+<ul class="simple">
+<li>How to get API keys</li>
+<li>How to authenticate requests</li>
+<li>Error messages related to invalid authentication</li>
+<li>Rate limits with API requests</li>
+<li>Potential costs surrounding API request usage</li>
+<li>Token expiration times</li>
+</ul>
+<p>KevAPI uses <a class="reference external" href="https://oauth.net/">OAuth</a> to provide authorized access to its API.</p>
+<p>One popular method for authenticating and authorizing users is OAuth 2.0. This approach relies on an authentication server to communicate with the API server in order to grant access. It works as follows:</p>
+<ol class="arabic simple">
+<li>The KevAPI generates a set of OAuth client ID and secret credentials for you app for both the sandbox and live environments.</li>
+<li>You pass these credentials in the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header in a <code class="docutils literal notranslate"><span class="pre">get</span> <span class="pre">access</span> <span class="pre">token</span></code> request.</li>
+<li>When the KevAPI receives the credentials, the KevAPI issues access tokens called a <em>bearer token</em>. The <code class="docutils literal notranslate"><span class="pre">access_token</span></code> field in the response contains the bearer token, as per below.</li>
+</ol>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="s2">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;scope&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;nonce&quot;</span><span class="p">:</span> <span class="s2">&quot;nonce&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;Access-Token&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;token_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;app_id&quot;</span><span class="p">:</span> <span class="s2">&quot;APP-80W284485P519543T&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;expires_in&quot;</span><span class="p">:</span> <span class="mi">32398</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Use the bearer token in the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header when making a standard REST API request, as per below:</li>
+</ol>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span>curl -v -X GET https://api.sandbox.paypal.com/v1/invoicing/invoices?page=3&amp;page_size=4&amp;total_count_required=true \
+ -H &quot;Content-Type:application/json&quot; \
+ -H &quot;Authorization: Bearer Access-Token&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-s-included-in-an-api-request">
+<h2><a class="toc-backref" href="#contents">What’s Included in an API Request</a><a class="headerlink" href="#what-s-included-in-an-api-request" title="Permalink to this headline">¶</a></h2>
+<p>Add a section that gives perspective of what must be included in an API request. This will be the following:</p>
+<ul class="simple">
+<li>The HTTP Method:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GET - Requests data from a resource</li>
+<li>POST - Submits data to a resource</li>
+<li>PUT - Updates a resource</li>
+<li>PATCH - Partially updates a resource</li>
+<li>DELETE - Deletes a resource</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>The URL to the API Service. Example: <a class="reference external" href="https://api.paypal.com">https://api.paypal.com</a></li>
+<li>The Endpoint.</li>
+<li>Query Parameters.</li>
+<li>HTTP Request Headers - includes the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header, and the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> header, which specifies the response format (e.g., <code class="docutils literal notranslate"><span class="pre">application/json</span></code>. The <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> is required for operations with a request body being submitted (e.g., <code class="docutils literal notranslate"><span class="pre">application/json</span></code>).</li>
+<li>If the Method is a POST, PUT, or PATCH, then the Request Body parameters.</li>
+</ul>
+<p>Then show a sample request code (in curl):</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">sandbox</span><span class="o">.</span><span class="n">paypal</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">payments</span><span class="o">/</span><span class="n">billing</span><span class="o">-</span><span class="n">agreements</span><span class="o">/</span><span class="n">I</span><span class="o">-</span><span class="mi">1</span><span class="n">TJ3GAGG82Y9</span><span class="o">/</span><span class="n">cancel</span> \
+ <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> \
+ <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer Access-Token&quot;</span> \
+ <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span>
+   <span class="s2">&quot;note&quot;</span><span class="p">:</span> <span class="s2">&quot;Canceling the profile.&quot;</span>
+   <span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-request">
+<h2><a class="toc-backref" href="#contents">Example Request</a><a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h2>
+<p>Show example request code in curl (Kevin: You can generate this from Postman)</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> \
+ <span class="s1">&#39;http://api.openweathermap.org/data/2.5/weather?id=6087824&amp;units=metric&amp;appid=5f41365262b067e009b2115887c09706&#39;</span> \
+</pre></div>
+</div>
+</div>
+<div class="section" id="try-out-request-with-postman">
+<h2><a class="toc-backref" href="#contents">Try out Request with Postman</a><a class="headerlink" href="#try-out-request-with-postman" title="Permalink to this headline">¶</a></h2>
+<p>Integrate some endpoints in Postman and then create the <strong>Run in Postman</strong> button. This provides interactivity to try it out.</p>
+<p>Put in a <a class="reference external" href="http://idratherbewriting.com/learnapidoc/docapis_doc_getting_started_section.html">Run in Postman</a> button.</p>
+</div>
+<div class="section" id="responses">
+<h2><a class="toc-backref" href="#contents">Responses</a><a class="headerlink" href="#responses" title="Permalink to this headline">¶</a></h2>
+<p>Show example of response. <a class="reference external" href="https://www.aerisweather.com/support/docs/api/getting-started/responses/">Aeris</a> has good example.</p>
+<p>Most successful responses from any endpoint action of the Aeris Weather API will be in the following form, where the <code class="docutils literal notranslate"><span class="pre">response</span></code> object will be an array of results as objects:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;success&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="s2">&quot;response&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;KBFI&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;loc&quot;</span><span class="o">:</span> <span class="p">{</span>
+           <span class="s2">&quot;long&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">122.31666666667</span><span class="p">,</span>
+           <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">47.55</span>
+       <span class="p">},</span>
+       <span class="s2">&quot;place&quot;</span><span class="o">:</span> <span class="p">{</span>
+           <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;seattle/boeing&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;state&quot;</span><span class="o">:</span> <span class="s2">&quot;wa&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;country&quot;</span><span class="o">:</span> <span class="s2">&quot;us&quot;</span>
+       <span class="p">},</span>
+       <span class="s2">&quot;obTimestamp&quot;</span><span class="o">:</span> <span class="mi">1326552780</span><span class="p">,</span>
+       <span class="s2">&quot;obDateTime&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-01-14T06:53:00-08:00&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;ob&quot;</span><span class="o">:</span> <span class="p">{</span>
+           <span class="s2">&quot;tempC&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+           <span class="p">....</span>
+       <span class="p">},</span>
+       <span class="s2">&quot;raw&quot;</span><span class="o">:</span> <span class="s2">&quot;KBFI 141453Z 14010KT 8SM -RA OVC018 03/01 A2995&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;relativeTo&quot;</span><span class="o">:</span> <span class="p">{</span>
+           <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">47.60621</span><span class="p">,</span>
+           <span class="p">...</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rate-limits">
+<h2><a class="toc-backref" href="#contents">Rate Limits</a><a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
+<p>Rate limits determine how frequently you can call a particular endpoint. Usually companies have different tiers (for example, free versus pro) and licenses (open-source, business, commercial) corresponding to different capabilities or rate limits with the API. Companies with APIs make money by charging for access to the API, but they usually distinguish between low usage and high usage, often making the low usage options free so that developers can explore and experiment with the API.</p>
+<p>Pricing details related to rate limiting is probably information that’s within the marketing domain rather than the documentaiton domain. However, developers will still want to knwo a few key behaviours around the rate limiting thresholds.</p>
+<ul class="simple">
+<li>When you exceed the threshold, do your calls get throttled with slower responses?</li>
+<li>Do you get overcharges for every extra call?</li>
+<li>Do the responses simply return a particular status code (if so, which one)?</li>
+</ul>
+<p>Also, when developers implement the code into their applications or web pages, how are they implementing code for responses that don’t provide data (due to the threshold being exceeded)? Are there conditions and checks to handle these scenarios? Does the widget (or whatever might be implementing the API) simply freeze or hang, display empty or crash?</p>
+<p><strong>Examples</strong></p>
+<p>GitHub - &lt;<a class="reference external" href="https://developer.github.com/v3/#rate-limiting">https://developer.github.com/v3/#rate-limiting</a>&gt;</p>
+<p>Linkedin - &lt;<a class="reference external" href="https://developer.linkedin.com/docs/rest-api">https://developer.linkedin.com/docs/rest-api</a>?u=0#&gt;</p>
+</div>
+<div class="section" id="examples-of-getting-started">
+<h2><a class="toc-backref" href="#contents">Examples of Getting Started</a><a class="headerlink" href="#examples-of-getting-started" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://developers.google.com/adsense/management/getting_started">Adsense</a></p>
+<p><a class="reference external" href="https://developer.paypal.com/docs/api/overview">PayPal</a></p>
+<p><a class="reference external" href="https://developer.twitter.com/en/docs/basics/getting-started">Twitter</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BasePath.html" class="btn btn-neutral float-right" title="Base Path" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Overview.html" class="btn btn-neutral" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Uhlig.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinxcontrib-httpexample.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

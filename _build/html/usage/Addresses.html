@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Addresses &mdash; API Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parcels" href="Parcels.html" />
+    <link rel="prev" title="Status and Error Codes" href="Status_Error_Codes.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_Started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasePath.html">Base Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Status_Error_Codes.html">Status and Error Codes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Addresses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-address-object">The Address Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-create-a-new-address"><code class="docutils literal notranslate"><span class="pre">POST</span></code> Create a New Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-retrieve-an-address"><code class="docutils literal notranslate"><span class="pre">GET</span></code> Retrieve an Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-validate-an-address"><code class="docutils literal notranslate"><span class="pre">GET</span></code> Validate an Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-list-all-addresses"><code class="docutils literal notranslate"><span class="pre">GET</span></code> List All Addresses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Parcels.html">Parcels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shipments.html">Shipments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandbox Stuff.html">Sandbox Stuff</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Addresses</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/Addresses.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="addresses">
+<h1>Addresses<a class="headerlink" href="#addresses" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-address-object">
+<h2>The Address Object<a class="headerlink" href="#the-address-object" title="Permalink to this headline">¶</a></h2>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <style>
+ table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+ }
+
+ td, th {
+   border: 1px solid #dddddd;
+   text-align: left;
+   padding: 8px;
+ }
+
+ tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+
+ .codetext {
+   color: red;
+ }
+
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Data Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>is_complete</td>
+    <td>boolean</td>
+    <td>Complete addresses contain all required values. Incomplete addresses have failed one or multiple validations. Incomplete Addresses are eligible for requesting rates but lack at least one required value for purchasing labels.</td>
+  </tr>
+  <tr>
+    <td>object_created</td>
+    <td>datetime</td>
+    <td>Date and time of Address creation.</td>
+  </tr>
+  <tr>
+    <td>object_updated</td>
+    <td>datetime</td>
+    <td>Date and time of last Address update. Since you cannot update Addresses after they were created, this time stamp reflects the time when the Address was changed by Shippo's systems for the last time, e.g., during the approximation of one or more values.</td>
+  </tr>
+  <tr>
+    <td>object_id</td>
+    <td>string</td>
+    <td>Unique identifier of the given Address object. This ID is required to create a Shipment object.</td>
+  </tr>
+  <tr>
+    <td>object owner</td>
+    <td>string</td>
+    <td>Username of the user who created the Address object.</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>string</td>
+    <td>First and Last Nameo of the addressee</td>
+  </tr>
+   <tr>
+    <td>company</td>
+    <td>string</td>
+    <td>Company Name</td>
+  </tr>
+  </tr>
+  <tr>
+    <td>street1</td>
+    <td>string</td>
+    <td>First street line, 35 character limit. Usually street number and street name (except for DHL Germany, see street_no).</td>
+  </tr>
+  <tr>
+    <td>street_no</td>
+    <td>string</td>
+    <td>Street number of the addressed building. This field can be included in street1 for all carriers except for DHL Germany.</td>
+  </tr>
+  <tr>
+    <td>street2</td>
+    <td>string</td>
+    <td>Second street line, 35 character limit.</td>
+  </tr>
+  <tr>
+    <td>street3</td>
+    <td>string</td>
+    <td>Third street line, 35 character limit. Only accepted for USPS international shipments, UPS domestic and UPS international shipments.</td>
+  </tr>
+  <tr>
+    <td>city</td>
+    <td>string</td>
+    <td>Name of a city. When creating a Quote Address, sending a city is optional but will yield more accurate Rates. Please bear in mind that city names may be ambiguous (there are 34 Springfields in the US). Pass in a state or a ZIP code (see below), if known, it will yield more accurate results.</td>
+  </tr>
+  <tr>
+    <td>zip</td>
+    <td>string</td>
+    <td>Postal code of an Address. When creating a Quote Addresses, sending a ZIP is optional but will yield more accurate Rates.</td>
+  </tr>
+  <tr>
+    <td>state</td>
+    <td>string</td>
+    <td>State values are only required for shipments from the United States and Canada (most carriers only accept two-character state abbreviations). However, to receive more accurate quotes, passing it is generally recommended.</td>
+  </tr>
+  <tr>
+    <td>country</td>
+    <td>ISO 2 country code</td>
+    <td>Example: 'US' or 'DE'. All accepted values can be found on the <a href="https://www.iso.org/home.html" target="_blank">Official ISO Website</a>. Sending a country is always required.</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>string</td>
+    <td>Addresses containing a phone number allow carriers to call the recipient when delivering the Parcel. This increases the probability of delivery and helps to avoid accessorial charges after a Parcel has been shipped.</td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td>email</td>
+    <td>E-mail address of the contact person, RFC3696/5321-compliant.</td>
+  </tr>
+  <tr>
+    <td>is_residential</td>
+    <td>nullable boolean</td>
+    <td>Indicates whether the address provided is a residential address or not.</td>
+  </tr>
+  <tr>
+    <td>validate</td>
+    <td>nullable boolean</td>
+    <td>Set to true to validate Address object.</td>
+  </tr>
+  <tr>
+    <td>metadata</td>
+    <td>string</td>
+    <td>A string of up to 100 characters that can be filled with any additional information you want to attach to the object.</td>
+  </tr>
+ <tr>
+    <td>test</td>
+    <td>bool</td>
+    <td>Indicates whether the object has been created in test mode.</td>
+  </tr>
+ <tr>
+    <td>validation_results</td>
+    <td>object</td>
+    <td>object that contains information regarding if an address had been validated or not. Also contains any messages generated during validation. Children keys are <span class="codetext">is_valid</span> (boolean) and <span class="codetext">messages</span> (array).</td>
+  </tr>
+
+</table>
+
+</body>
+</html><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="post-create-a-new-address">
+<h2><code class="docutils literal notranslate"><span class="pre">POST</span></code> Create a New Address<a class="headerlink" href="#post-create-a-new-address" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">POST</span></code> to the <code class="docutils literal notranslate"><span class="pre">/addresses</span></code> resource to allow your application to create a new address object. Hello. Hello</p>
+<p><span style="color:blue;font-size:18px">/addresses/</span></p><p><strong>BODY PARAMETERS</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="13%" />
+<col width="27%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Required/Optional</th>
+<th class="head">Data Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>name</strong></td>
+<td>optional</td>
+<td>string</td>
+<td>name of purchaser</td>
+</tr>
+<tr class="row-odd"><td><strong>company</strong></td>
+<td>optional</td>
+<td>string</td>
+<td>name of company</td>
+</tr>
+<tr class="row-even"><td><strong>street1</strong></td>
+<td>required</td>
+<td>string</td>
+<td>street name</td>
+</tr>
+<tr class="row-odd"><td><strong>street_no</strong></td>
+<td>optional</td>
+<td>string</td>
+<td>building number</td>
+</tr>
+<tr class="row-even"><td><strong>street2</strong></td>
+<td>optional</td>
+<td>string</td>
+<td>street name (secondary)</td>
+</tr>
+<tr class="row-odd"><td><strong>city</strong></td>
+<td>required</td>
+<td>string</td>
+<td>name of the city</td>
+</tr>
+<tr class="row-even"><td><strong>zip</strong></td>
+<td>required</td>
+<td>string</td>
+<td>zip (USA) or postal (Canada) code</td>
+</tr>
+<tr class="row-odd"><td><strong>state</strong></td>
+<td>required</td>
+<td>string</td>
+<td>name of state (USA) or province (Canada)</td>
+</tr>
+<tr class="row-even"><td><strong>country</strong></td>
+<td>required</td>
+<td>ISO 2 country code</td>
+<td>name of country</td>
+</tr>
+<tr class="row-odd"><td><strong>phone</strong></td>
+<td>optional</td>
+<td>string</td>
+<td>phone number</td>
+</tr>
+<tr class="row-even"><td><strong>email</strong></td>
+<td>optional</td>
+<td>email</td>
+<td>email address contact</td>
+</tr>
+<tr class="row-odd"><td><strong>is_residential</strong></td>
+<td>optional</td>
+<td>boolean</td>
+<td>is residential?</td>
+</tr>
+<tr class="row-even"><td><strong>validate</strong></td>
+<td>optional</td>
+<td>boolean</td>
+<td>for potential validation</td>
+</tr>
+<tr class="row-odd"><td><strong>metadata</strong></td>
+<td>optional</td>
+<td>string</td>
+<td>any metadata to pass along</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>EXAMPLE REQUEST (Create a New Address)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">goshippo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">addresses</span><span class="o">/</span> 
+    <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: ShippoToken &lt;API_TOKEN&gt;&quot;</span> \
+    <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span>
+    <span class="o">-</span><span class="n">d</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Shawn Ippotle&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">company</span><span class="o">=</span><span class="s2">&quot;Shippo&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">street1</span><span class="o">=</span><span class="s2">&quot;215 Clayton St.&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">street2</span><span class="o">=</span><span class="s2">&quot;&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">city</span><span class="o">=</span><span class="s2">&quot;San Francisco&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;CA&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="nb">zip</span><span class="o">=</span><span class="mi">94117</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;US&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;+1 555 341 9393&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span>\
+    <span class="o">-</span><span class="n">d</span> <span class="n">is_residential</span><span class="o">=</span><span class="kc">True</span>\
+    <span class="o">-</span><span class="n">d</span> <span class="n">metadata</span><span class="o">=</span><span class="s2">&quot;Customer ID 123456&quot;</span>
+</pre></div>
+</div>
+<p><strong>EXAMPLE RESPONSE (from Create a New Address)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;is_complete&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;object_created&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-09T02:19:13.174Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_updated&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-09T02:19:13.174Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_id&quot;</span><span class="p">:</span><span class="s2">&quot;d799c2679e644279b59fe661ac8fa488&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_owner&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;validation_results&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Shawn Ippotle&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;company&quot;</span><span class="p">:</span><span class="s2">&quot;Shippo&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;street1&quot;</span><span class="p">:</span><span class="s2">&quot;215 Clayton St.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;street2&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;zip&quot;</span><span class="p">:</span><span class="s2">&quot;94117&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;country&quot;</span><span class="p">:</span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;15553419393&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;is_residential&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;metadata&quot;</span><span class="p">:</span><span class="s2">&quot;Customer ID 123456&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-retrieve-an-address">
+<h2><code class="docutils literal notranslate"><span class="pre">GET</span></code> Retrieve an Address<a class="headerlink" href="#get-retrieve-an-address" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">GET</span></code> to the <code class="docutils literal notranslate"><span class="pre">/addresses</span></code> resource to allow your application to retrieve an existing address by object ID.</p>
+<p><span style="color:blue;font-size:18px">/addresses/{address object id}</span></p><p><strong>PATH PARAMETERS</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="13%" />
+<col width="27%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Required/Optional</th>
+<th class="head">Data Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Address Object ID</strong></td>
+<td>required</td>
+<td>string</td>
+<td>address object id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EXAMPLE REQUEST (Retrieve an Address)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl https://api.goshippo.com/addresses/d799c2679e644279b59fe661ac8fa488/ <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: ShippoToken &lt;API_TOKEN&gt;&quot;</span>
+</pre></div>
+</div>
+<p><strong>EXAMPLE RESPONSE (from Retrieve an Address)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;is_complete&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;object_created&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-09T02:19:13.174Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_updated&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-09T02:19:13.174Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_id&quot;</span><span class="p">:</span><span class="s2">&quot;d799c2679e644279b59fe661ac8fa488&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_owner&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;validation_results&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Shawn Ippotle&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;street1&quot;</span><span class="p">:</span><span class="s2">&quot;215 Clayton St.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;street2&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;zip&quot;</span><span class="p">:</span><span class="s2">&quot;94117&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;country&quot;</span><span class="p">:</span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;15553419393&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;is_residential&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;metadata&quot;</span><span class="p">:</span><span class="s2">&quot;Customer ID 123456&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-validate-an-address">
+<h2><code class="docutils literal notranslate"><span class="pre">GET</span></code> Validate an Address<a class="headerlink" href="#get-validate-an-address" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">GET</span></code> to the <code class="docutils literal notranslate"><span class="pre">/address</span></code> resource to allow your application to validate an address object.</p>
+<p><span style="color:blue;font-size:18px">/addresses/{address object id}/validate/</span></p><p><strong>PATH PARAMETERS</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="13%" />
+<col width="27%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Required/Optional</th>
+<th class="head">Data Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Address Object ID</strong></td>
+<td>required</td>
+<td>string</td>
+<td>address object id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EXAMPLE REQUEST (Validate an Address)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl https://api.goshippo.com/addresses/d799c2679e644279b59fe661ac8fa488/validate/ <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: ShippoToken &lt;API_TOKEN&gt;&quot;</span>
+</pre></div>
+</div>
+<p><strong>EXAMPLE RESPONSE (from Validate an Address)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;is_complete&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;object_created&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-03-30T23:47:11.574Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;object_updated&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-03-30T23:47:11.596Z&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="s2">&quot;67183b2e81e9421f894bfbcdc4236b16&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;object_owner&quot;</span><span class="p">:</span> <span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Shawn Ippotle&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;company&quot;</span><span class="p">:</span> <span class="s2">&quot;Shippo&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;street_no&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;street1&quot;</span><span class="p">:</span> <span class="s2">&quot;215 CLAYTOON ST.&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;street2&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;SAN FRANCISCO&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;zip&quot;</span><span class="p">:</span> <span class="s2">&quot;94107&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;is_residential&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;validation_results&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;is_valid&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;USPS&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;Unknown Street&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;City, State and ZIP Code are valid, but street address is not a match.&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-all-addresses">
+<h2><code class="docutils literal notranslate"><span class="pre">GET</span></code> List All Addresses<a class="headerlink" href="#get-list-all-addresses" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">GET</span></code> to the <code class="docutils literal notranslate"><span class="pre">/address</span></code> resource to allow your application to list all addresses.</p>
+<p><span style="color:blue;font-size:18px">/addresses/</p><p><strong>EXAMPLE REQUEST (List All Addresses)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl https://api.goshippo.com/addresses/ <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: ShippoToken &lt;API_TOKEN&gt;&quot;</span>
+</pre></div>
+</div>
+<p><strong>EXAMPLE RESPONSE (from List All Addresses)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;next&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;previous&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;results&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;is_complete&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;object_created&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-16T23:20:31.089Z&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;object_updated&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-16T23:20:31.089Z&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;object_id&quot;</span><span class="p">:</span><span class="s2">&quot;747207de2ba64443b645d08388d0309c&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;object_owner&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;validation_results&quot;</span><span class="p">:</span> <span class="p">{},</span>
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Shawn Ippotle&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;street1&quot;</span><span class="p">:</span><span class="s2">&quot;215 Clayton St.&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;street2&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;zip&quot;</span><span class="p">:</span><span class="s2">&quot;94117&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;country&quot;</span><span class="p">:</span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;15553419393&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;is_residential&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;metadata&quot;</span><span class="p">:</span><span class="s2">&quot;Customer ID 123456&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">},</span>
+      <span class="p">{</span><span class="o">...</span><span class="p">},</span>
+      <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Parcels.html" class="btn btn-neutral float-right" title="Parcels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Status_Error_Codes.html" class="btn btn-neutral" title="Status and Error Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Uhlig.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinxcontrib-httpexample.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

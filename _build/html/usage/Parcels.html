@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parcels &mdash; API Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Shipments" href="Shipments.html" />
+    <link rel="prev" title="Addresses" href="Addresses.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting_Started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasePath.html">Base Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Status_Error_Codes.html">Status and Error Codes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Addresses.html">Addresses</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Parcels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-parcels-object">The Parcels Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parcel-extras">Parcel Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-create-a-new-parcel"><code class="docutils literal notranslate"><span class="pre">POST</span></code> Create a New Parcel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-retrieve-a-parcel"><code class="docutils literal notranslate"><span class="pre">GET</span></code> Retrieve a Parcel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-list-all-parcels"><code class="docutils literal notranslate"><span class="pre">GET</span></code> List All Parcels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Shipments.html">Shipments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandbox Stuff.html">Sandbox Stuff</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Parcels</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/Parcels.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="parcels">
+<h1>Parcels<a class="headerlink" href="#parcels" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-parcels-object">
+<h2>The Parcels Object<a class="headerlink" href="#the-parcels-object" title="Permalink to this headline">¶</a></h2>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 86%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.codetext {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Data Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>object_state</td>
+    <td>"VALID"</td>
+    <td>A Parcel will only be valid when all required values have been sent and validated successfully.</td>
+  </tr>
+  <tr>
+    <td>object_created</td>
+    <td>datetime</td>
+    <td>Date and time of Address creation.</td>
+  </tr>
+  <tr>
+    <td>object_updated</td>
+    <td>datetime</td>
+    <td>Date and time of last Parcel update. Since you cannot update Parcels after they were created, this time stamp reflects the time when the Parcel was changed by Shippo's systems for the last time, e.g., during sorting the dimensions given.</td>
+  </tr>
+  <tr>
+    <td>object_id</td>
+    <td>string</td>
+    <td>Unique identifier of the given Parcel object. This ID is required to create a Shipment object.</td>
+  </tr>
+  <tr>
+    <td>object owner</td>
+    <td>string</td>
+    <td>Username of the user who created the Parcel object.</td>
+  </tr>
+  <tr>
+    <td>length</td>
+    <td>decimal (10,4)</td>
+    <td>Length of the Parcel. Up to six digits in front and four digits after the decimal separator are accepted.</td>
+  </tr>
+   <tr>
+    <td>width</td>
+    <td>decimal (10,4)</td>
+    <td>Width of the Parcel. Up to six digits in front and four digits after the decimal separator are accepted.</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>decimal (10,4)</td>
+    <td>Height of the parcel. Up to six digits in front and four digits after the decimal separator are accepted.</td>
+  </tr>
+  <tr>
+    <td>distance_unit</td>
+    <td>"cm", "in", "ft", "mm", "m", "yd"</td>
+    <td>The unit used for length, width and height.</td>
+  </tr>
+  <tr>
+    <td>weight</td>
+    <td>decimal (10,4)</td>
+    <td>Weight of the parcel. Up to six digits in front and four digits after the decimal separator are accepted.</td>
+  </tr>
+  <tr>
+    <td>mass_unit</td>
+    <td>"g", "oz", "lb", "kg"</td>
+    <td>The unit used for weight.</td>
+  </tr>
+  <tr>
+    <td>template</td>
+    <td>string</td>
+    <td>A <a href="https://goshippo.com/docs/reference#parcel-templates" target="_blank">parcel template</a> is a predefined package used by one or multiple carriers. See the <a href="https://goshippo.com/docs/reference#parcel-templates" target="_blank">parcel template</a> table for all available values and the corresponding tokens. When a template is given, the parcel dimensions have to be sent, but will not be used for the Rate generation. The dimensions below will instead be used. The parcel weight is not affected by the use of a template.</td>
+  </tr>
+  <tr>
+    <td>metadata</td>
+    <td>string</td>
+    <td>A string of up to 100 characters that can be filled with any additional information you want to attach to the object.</td>
+  </tr>
+  <tr>
+    <td>extra</td>
+    <td>object</td>
+    <td>An object holding optional extra services to be requested for each parcel in a multi-piece shipment. See the <a href="#ParcelExtrabookmark">Parcel Extra table</a> below for all available services.</td>
+  </tr>
+
+</table>
+
+</body>
+</html><p id="ParcelExtrabookmark"></p></div>
+<div class="section" id="parcel-extras">
+<h2>Parcel Extras<a class="headerlink" href="#parcel-extras" title="Permalink to this headline">¶</a></h2>
+<p>The following values are support for the <code class="docutils literal notranslate"><span class="pre">extra</span></code> field of the parcel object.</p>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 86%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.codetext {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Data Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>COD</td>
+    <td>object</td>
+    <td>Specify collection on delivery details (UPS, and FedEx only)</td>
+  </tr>
+  <tr>
+    <td>COD.amount</td>
+    <td>string</td>
+    <td>Amount to be collected</td>
+  </tr>
+  <tr>
+    <td>COD.currency</td>
+    <td>ISO 4217 currency code (string)</td>
+    <td>Currency for the amount to be collected. Currently only USD is supported for FedEx and UPS.</td>
+  </tr>
+  <tr>
+    <td>COD.payment_method</td>
+    <td>"SECURED_FUNDS", "CASH", "ANY"</td>
+    <td>Secured funds include money orders, certified cheques and others (see <a href="https://www.ups.com/us/en/shipping/services/value-added/cod.page" target="_blank">UPS</a> and <a href="http://www.fedex.com/ca_english/services/addservopt/groundcod.html" target="_blank">FedEx</a> for details). If no payment_method inputted the value defaults to "ANY".)</td>
+  </tr>
+  <tr>
+    <td>insurance</td>
+    <td>object</td>
+    <td>Specify collection on delivery details (UPS, and FedEx only).</td>
+  </tr>
+  <tr>
+    <td>insurance.amount</td>
+    <td>string</td>
+    <td>Amount to be collected.</td>
+  </tr>
+   <tr>
+    <td>insurance.currency</td>
+    <td>ISO 4217 currency code (string)</td>
+    <td>Currency for the amount to be collected. Currently only USD is supported for FedEx and UPS.</td>
+  </tr>
+  <tr>
+    <td>insurance.provider</td>
+    <td>"FEDEX", "UPS"</td>
+    <td>Specify the carrier insurance to have Insurance provided by the carrier directly.</td>
+  </tr>
+  <tr>
+    <td>insurance.content</td>
+    <td>string</td>
+    <td>Specify package content for insurance.</td>
+  </tr>
+
+</table>
+
+</body>
+</html><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="post-create-a-new-parcel">
+<h2><code class="docutils literal notranslate"><span class="pre">POST</span></code> Create a New Parcel<a class="headerlink" href="#post-create-a-new-parcel" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">POST</span></code> to the <code class="docutils literal notranslate"><span class="pre">/parcel</span></code> resource to allow your application to create a new parcel object.</p>
+<p><span style="color:blue;font-size:18px">/parcels/</span></p><p><strong>BODY PARAMETERS</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attributes</th>
+<th class="head">Required/Optional</th>
+<th class="head">Data Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>length</strong></td>
+<td>required</td>
+<td>decimal (10, 4)</td>
+</tr>
+<tr class="row-odd"><td><strong>width</strong></td>
+<td>required</td>
+<td>decimal (10, 4)</td>
+</tr>
+<tr class="row-even"><td><strong>height</strong></td>
+<td>required</td>
+<td>decimal (10, 4)</td>
+</tr>
+<tr class="row-odd"><td><strong>distance_unit</strong></td>
+<td>required</td>
+<td>“cm”, “in”, “ft”, “mm”, “m”, “yd”</td>
+</tr>
+<tr class="row-even"><td><strong>weight</strong></td>
+<td>required</td>
+<td>decimal (10, 4)</td>
+</tr>
+<tr class="row-odd"><td><strong>mass_unit</strong></td>
+<td>required</td>
+<td>“g”, “oz”, “lb”, “kg”</td>
+</tr>
+<tr class="row-even"><td><strong>template</strong></td>
+<td>optional</td>
+<td>string</td>
+</tr>
+<tr class="row-odd"><td><strong>extra</strong></td>
+<td>optional</td>
+<td>object</td>
+</tr>
+<tr class="row-even"><td><strong>metadata</strong></td>
+<td>optional</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EXAMPLE REQUEST (Create a Parcel)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">goshippo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">parcels</span><span class="o">/</span> \
+    <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: ShippoToken &lt;API_TOKEN&gt;&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">width</span><span class="o">=</span><span class="mi">5</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">distance_unit</span><span class="o">=</span><span class="s2">&quot;cm&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">mass_unit</span><span class="o">=</span><span class="s2">&quot;lb&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">template</span><span class="o">=</span><span class="s2">&quot;&quot;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="n">metadata</span><span class="o">=</span><span class="s2">&quot;Customer ID 123456&quot;</span>
+</pre></div>
+</div>
+<p><strong>EXAMPLE RESPONSE (from Create a Parcel)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;is_complete&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;object_created&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-09T02:19:13.174Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_updated&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-09T02:19:13.174Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_id&quot;</span><span class="p">:</span><span class="s2">&quot;d799c2679e644279b59fe661ac8fa488&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_owner&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;validation_results&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Shawn Ippotle&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;company&quot;</span><span class="p">:</span><span class="s2">&quot;Shippo&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;street1&quot;</span><span class="p">:</span><span class="s2">&quot;215 Clayton St.&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;street2&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;zip&quot;</span><span class="p">:</span><span class="s2">&quot;94117&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;country&quot;</span><span class="p">:</span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;15553419393&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;is_residential&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+   <span class="s2">&quot;metadata&quot;</span><span class="p">:</span><span class="s2">&quot;Customer ID 123456&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-retrieve-a-parcel">
+<h2><code class="docutils literal notranslate"><span class="pre">GET</span></code> Retrieve a Parcel<a class="headerlink" href="#get-retrieve-a-parcel" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">GET</span></code> to the <code class="docutils literal notranslate"><span class="pre">/parcel</span></code> resource to allow your application to retrieve an existing parcel by object ID.</p>
+<p><span style="color:blue;font-size:18px">/parcels/{parcel object id}</span></p><p><strong>PATH PARAMETERS</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="13%" />
+<col width="27%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Required/Optional</th>
+<th class="head">Data Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>Parcel Object ID</strong></td>
+<td>required</td>
+<td>string</td>
+<td>parcel object id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>EXAMPLE REQUEST (Retrieve a Parcel)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl https://api.goshippo.com/parcels/7df2ecf8b4224763ab7c71fae7ec8274/ <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: ShippoToken &lt;API_TOKEN&gt;&quot;</span>
+</pre></div>
+</div>
+<p><strong>EXAMPLE RESPONSE (from Retrieve a Parcel)</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;object_state&quot;</span><span class="p">:</span><span class="s2">&quot;VALID&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_created&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-12-11T19:38:09.729Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_updated&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-12-11T19:38:09.729Z&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="s2">&quot;fcd9c72b564d4bfa8c03299ed6545132&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;object_owner&quot;</span><span class="p">:</span> <span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="s2">&quot;20&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="s2">&quot;15&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;distance_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;mass_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;lb&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="s2">&quot;Customer ID 123456&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-list-all-parcels">
+<h2><code class="docutils literal notranslate"><span class="pre">GET</span></code> List All Parcels<a class="headerlink" href="#get-list-all-parcels" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">GET</span></code> to the <code class="docutils literal notranslate"><span class="pre">/parcel</span></code> resource to allow your application to list all parcel objects.</p>
+<p><span style="color:blue;font-size:18px">/parcels/</p><p><strong>EXAMPLE REQUEST (List All Parcels)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl https://api.goshippo.com/parcels/ <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: ShippoToken &lt;API_TOKEN&gt;&quot;</span>
+</pre></div>
+</div>
+<p><strong>EXAMPLE RESPONSE (from List All Parcels)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;next&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;previous&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+   <span class="s2">&quot;results&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s2">&quot;is_complete&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;object_created&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-16T23:20:31.089Z&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;object_updated&quot;</span><span class="p">:</span><span class="s2">&quot;2014-07-16T23:20:31.089Z&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;object_id&quot;</span><span class="p">:</span><span class="s2">&quot;747207de2ba64443b645d08388d0309c&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;object_owner&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;validation_results&quot;</span><span class="p">:</span> <span class="p">{},</span>
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Shawn Ippotle&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;street1&quot;</span><span class="p">:</span><span class="s2">&quot;215 Clayton St.&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;street2&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;zip&quot;</span><span class="p">:</span><span class="s2">&quot;94117&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;country&quot;</span><span class="p">:</span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;15553419393&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;shippotle@goshippo.com&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;is_residential&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s2">&quot;metadata&quot;</span><span class="p">:</span><span class="s2">&quot;Customer ID 123456&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">},</span>
+      <span class="p">{</span><span class="o">...</span><span class="p">},</span>
+      <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Shipments.html" class="btn btn-neutral float-right" title="Shipments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Addresses.html" class="btn btn-neutral" title="Addresses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Uhlig.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinxcontrib-httpexample.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

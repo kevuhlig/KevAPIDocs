@@ -1,0 +1,23 @@
+============
+Sandbox2
+============
+
+.. code-block:: bash
+
+   curl https://api.goshippo.com/addresses/d799c2679e644279b59fe661ac8fa488/ \
+      -H "Authorization: ShippoToken <API_TOKEN>"
+
+-----------------
+Locking an object
+-----------------
+
+To lock an object send a POST request to the ``/@lock`` endpoint that is available on any content object in Plone:
+
+..  http:example:: curl httpie python-requests
+    :request: lock.txt
+
+If the lock operation succeeds, the server will respond with status term ``200 OK`` and return various information
+about the lock including the lock token. The token is needed in later requests to update the locked object.
+
+.. literalinclude:: lock.json
+   :language: http

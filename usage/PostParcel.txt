@@ -1,0 +1,10 @@
+curl https://api.goshippo.com/parcels/ \
+    -H "Authorization: ShippoToken <API_TOKEN>" \
+    -d length=5 \
+    -d width=5 \
+    -d height=5 \
+    -d distance_unit="cm" \
+    -d weight=2 \
+    -d mass_unit="lb" \
+    -d template="" \
+    -d metadata="Customer ID 123456"

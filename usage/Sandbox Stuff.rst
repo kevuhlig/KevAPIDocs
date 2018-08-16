@@ -1,0 +1,74 @@
+=============
+Sandbox Stuff
+=============
+
+.. code-block:: bash
+
+   curl https://api.goshippo.com/addresses/d799c2679e644279b59fe661ac8fa488/ \
+      -H "Authorization: ShippoToken <API_TOKEN>"
+
+-------------------------------------------------
+Using the ``sphinxcontrib-httpexample`` Directive
+-------------------------------------------------
+
+**Example Request**
+
+..  http:example:: curl
+    :request: lock.txt
+    :response: lock.json
+
+**Example Response**
+
+.. literalinclude:: lock.json
+   :language: http
+
+
+**http:post directive**:
+
+.. http:post:: curl https://api.goshippo.com/addresses/
+
+**http:post role**
+
+:http:post:`curl https://api.goshippo.com/addresses/`
+
+
+**code-block directive with bash**
+
+I like this one because it puts the code into the recognizable box. 
+
+.. code-block:: bash
+  
+  curl https://api.goshippo.com/addresses/
+
+
+**literalinclude directive**
+
+This allows you to refer to a file so as not not overload your .rst page. 
+
+.. literalinclude:: PostAddress.json
+
+
+
+
+.. http:post:: curl https://api.goshippo.com/addresses/
+
+.. http:get:: curl https://api.goshippo.com/addresses/
+
+.. http:put:: curl https://api.goshippo.com/addresses/
+
+.. raw:: html 
+
+   <p>This is a paragraph in which I want <span style="color:red;font-size:22px">you</span> to read.</p>
+
+
+
+This is an ordinary paragraph.
+
+>>> print 'this is a Doctest block'
+this is a Doctest block
+
+The following is a literal block::
+
+    >>> This is not recognized as a doctest block by
+    reStructuredText.  It *will* be recognized by the doctest
+    module, though!

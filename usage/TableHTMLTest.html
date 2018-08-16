@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 86%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.codetext {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Data Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>"WAITING", "QUEUED", "SUCCESS", "ERROR"</td>
+    <td>"Waiting" shipments have been successfully submitted but not yet been processed. "Queued" shipments are currently being processed. "Success" shipments have been processed successfully, meaning that rate generation has concluded. "Error" does not occur currently and is reserved for future use.</td>
+  </tr>
+  <tr>
+    <td>object_created</td>
+    <td>datetime</td>
+    <td>Date and time of Shipment creation.</td>
+  </tr>
+  <tr>
+    <td>object_updated</td>
+    <td>datetime</td>
+    <td>Date and time of last Shipment update.</td>
+  </tr>
+  <tr>
+    <td>object_id</td>
+    <td>string</td>
+    <td>Username of the user who created the Shipment object.</td>
+  </tr>
+  <tr>
+    <td>address_from</td>
+    <td>string</td>
+    <td>ID of the Address object that should be used as recipient Address.</td>
+  </tr>
+  <tr>
+    <td>parcels</td>
+    <td>array</td>
+    <td>Array of IDs of the Parcel objects to be shipped.</td>
+  </tr>
+   <tr>
+    <td>shipment_date</td>
+    <td>datetime (ISO 8601 date)</td>
+    <td>Date the shipment will be tendered to the carrier. Must be in the format "2014-01-18T00:35:03.463Z". Defaults to current date and time if no value is provided. Please note that some carriers require this value to be in the future, on a working day, or similar.</td>
+  </tr>
+  <tr>
+    <td>address_return</td>
+    <td>string</td>
+    <td>ID of the Address object where the shipment will be sent back to if it is not delivered (Only available for UPS, USPS, and Fedex shipments). If this field is not set, your shipments will be returned to the address_form. </td>
+  </tr>
+  <tr>
+    <td>customs_declaration</td>
+    <td>string</td>
+    <td>ID of the Customs Declarations object for an international shipment.</td>
+  </tr>
+  <tr>
+    <td>metadata</td>
+    <td>string</td>
+    <td>A string of up to 100 characters that can be filled with any additional information you want to attach to the object.</td>
+  </tr>
+  <tr>
+    <td>extra</td>
+    <td>object</td>
+    <td>An object holding optional extra services to be requested. See the Shipment Extra table below for all available services.</td>
+  </tr>
+  <tr>
+    <td>rates</td>
+    <td>array</td>
+    <td>An array with all available rates. If <span class="codetext">async</span> has been set to <span class="codetext">false</span> in the request, this will be populated with all available rates in the response. Otherwise rates will be created asynchronously and this array will initially be empty.</td>
+  </tr>
+  <tr>
+    <td>metadata</td>
+    <td>string</td>
+    <td>A string of up to 100 characters that can be filled with any additional information you want to attach to the object.</td>
+  </tr>
+
+</table>
+
+</body>
+</html>
+
+
+
+
+

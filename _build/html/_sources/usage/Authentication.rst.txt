@@ -1,0 +1,56 @@
+================================
+Authentication and Authorization
+================================
+
+*	Authentication – proves correct identity.
+*	Authorization – allows a certain action.
+
+
+In API documentation, you don’t need to explain how your authentication works in detail to outside users. In fact, not explaining the internal details of your authentication process is probably a best practice as it would make it harder for hackers to abuse the API. However, you do need to explain some basic information such as:
+
+*	How to get API keys
+*	How to authenticate requests
+*	Error messages related to invalid authentication
+*	Rate limits with API requests
+*	Potential costs surrounding API request usage
+*	Token expiration times
+
+
+
+
+KevAPI uses `OAuth`__ to provide authorized access to its API. 
+
+.. __: https://oauth.net/ 
+
+One popular method for authenticating and authorizing users is OAuth 2.0. This approach relies on an authentication server to communicate with the API server in order to grant access. It works as follows:
+
+1. The KevAPI generates a set of OAuth client ID and secret credentials for you app for both the sandbox and live environments.
+
+2. You pass these credentials in the ``Authorization`` header in a ``get access token`` request.
+
+3. When the KevAPI receives the credentials, the KevAPI issues access tokens called a *bearer token*. The ``access_token`` field in the response contains the bearer token, as per below. 
+
+.. code:: python
+ 
+  {
+   "scope": "scope",
+   "nonce": "nonce",
+   "access_token": "Access-Token",
+   "token_type": "Bearer",
+   "app_id": "APP-80W284485P519543T",
+   "expires_in": 32398
+  }
+
+4. Use the bearer token in the ``Authorization`` header when making a standard REST API request, as per below:
+
+.. code:: python
+
+ curl -v -X GET https://api.sandbox.paypal.com/v1/invoicing/invoices?page=3&page_size=4&total_count_required=true \
+  -H "Content-Type:application/json" \
+  -H "Authorization: Bearer Access-Token"
+
+-----------
+Rate Limits
+-----------
+
+Rate limits with API requests.

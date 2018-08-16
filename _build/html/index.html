@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Documentation &mdash; API Documentation 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinxcontrib-httpexample.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="usage/Overview.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Getting_Started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/BasePath.html">Base Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Status_Error_Codes.html">Status and Error Codes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/Addresses.html">Addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Parcels.html">Parcels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Shipments.html">Shipments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Sandbox Stuff.html">Sandbox Stuff</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>API Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the API documentation.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/Overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Getting_Started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#signing-up-for-an-account-maybe">Signing up for an account (Maybe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#prerequisite-information-before-you-start-maybe">Prerequisite Information / Before you Start (Maybe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#get-familiar-with-the-app-maybe">Get familiar with the App (Maybe)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#authentication-and-authorization">Authentication and Authorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#what-s-included-in-an-api-request">What’s Included in an API Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#example-request">Example Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#try-out-request-with-postman">Try out Request with Postman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#responses">Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#rate-limits">Rate Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Getting_Started.html#examples-of-getting-started">Examples of Getting Started</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/BasePath.html">Base Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Status_Error_Codes.html">Status and Error Codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/Status_Error_Codes.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/Addresses.html">Addresses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/Addresses.html#the-address-object">The Address Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Addresses.html#post-create-a-new-address"><code class="docutils literal notranslate"><span class="pre">POST</span></code> Create a New Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Addresses.html#get-retrieve-an-address"><code class="docutils literal notranslate"><span class="pre">GET</span></code> Retrieve an Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Addresses.html#get-validate-an-address"><code class="docutils literal notranslate"><span class="pre">GET</span></code> Validate an Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Addresses.html#get-list-all-addresses"><code class="docutils literal notranslate"><span class="pre">GET</span></code> List All Addresses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Parcels.html">Parcels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/Parcels.html#the-parcels-object">The Parcels Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Parcels.html#parcel-extras">Parcel Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Parcels.html#post-create-a-new-parcel"><code class="docutils literal notranslate"><span class="pre">POST</span></code> Create a New Parcel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Parcels.html#get-retrieve-a-parcel"><code class="docutils literal notranslate"><span class="pre">GET</span></code> Retrieve a Parcel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Parcels.html#get-list-all-parcels"><code class="docutils literal notranslate"><span class="pre">GET</span></code> List All Parcels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Shipments.html">Shipments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/Shipments.html#the-shipments-object">The Shipments Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Shipments.html#shipment-extras">Shipment Extras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Shipments.html#post-create-a-new-shipment"><code class="docutils literal notranslate"><span class="pre">POST</span></code> Create a New Shipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Shipments.html#get-retrieve-a-shipment"><code class="docutils literal notranslate"><span class="pre">GET</span></code> Retrieve a Shipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/Shipments.html#get-list-all-shipments"><code class="docutils literal notranslate"><span class="pre">GET</span></code> List All Shipments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/Sandbox Stuff.html">Sandbox Stuff</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/Sandbox Stuff.html#using-the-sphinxcontrib-httpexample-directive">Using the <code class="docutils literal notranslate"><span class="pre">sphinxcontrib-httpexample</span></code> Directive</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage/Overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Uhlig.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/sphinxcontrib-httpexample.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

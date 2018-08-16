@@ -1,0 +1,28 @@
+{
+   "next":null,
+   "previous":null,
+   "results":[
+      {
+         "is_complete": true,
+         "object_created":"2014-07-16T23:20:31.089Z",
+         "object_updated":"2014-07-16T23:20:31.089Z",
+         "object_id":"747207de2ba64443b645d08388d0309c",
+         "object_owner":"shippotle@goshippo.com",
+         "validation_results": {},
+         "name":"Shawn Ippotle",
+         "street1":"215 Clayton St.",
+         "street2":"",
+         "city":"San Francisco",
+         "state":"CA",
+         "zip":"94117",
+         "country":"US",
+         "phone":"15553419393",
+         "email":"shippotle@goshippo.com",
+         "is_residential":true,
+         "metadata":"Customer ID 123456",
+         "test": true
+      },
+      {...},
+      {...}
+   ]
+}

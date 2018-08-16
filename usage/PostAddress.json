@@ -1,0 +1,15 @@
+curl https://api.goshippo.com/addresses/ 
+    -H "Authorization: ShippoToken <API_TOKEN>" \
+    -H "Content-Type: application/json"
+    -d name="Shawn Ippotle" \
+    -d company="Shippo" \
+    -d street1="215 Clayton St." \
+    -d street2="" \
+    -d city="San Francisco" \
+    -d state="CA" \
+    -d zip=94117 \
+    -d country="US" \
+    -d phone="+1 555 341 9393" \
+    -d email="shippotle@goshippo.com"\
+    -d is_residential=True\
+    -d metadata="Customer ID 123456"

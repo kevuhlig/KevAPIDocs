@@ -1,0 +1,161 @@
+===============================
+Code Snippets
+===============================
+
+----------------------------
+The ``Code-Block`` Directive
+----------------------------
+
+**JavaScript**
+
+.. code-block:: JavaScript
+
+   import lyft from 'node-lyft';
+   let defaultClient = lyft.ApiClient.instance;
+
+   // Configure OAuth2 access token for authorization: User Authentication
+   let userAuth = defaultClient.authentications['User Authentication'];
+   userAuth.accessToken = 'YOUR ACCESS TOKEN';
+
+   let apiInstance = new lyft.UserApi();
+
+   let request = new lyft.Ride('lyft', new lyft.Location(37.77663, -122.39227));
+   request.destination = new lyft.Location(37.771, -122.39123);
+
+   apiInstance.newRide(request).then((data) => {
+    console.log('API called successfully. Returned data: ' + data);
+   }, (error) => {
+    console.error(error);
+   });
+
+**GO**
+
+.. code-block:: GO
+
+   import "github.com/lyft/lyft-go-sdk/lyft"
+
+   origin := map[string]interface{}{
+    "lat": 37.77663,
+    "lng": -122.39227,
+  }
+
+  destination := map[string]interface{}{
+  "lat": 37.771,
+  "lng": -122.39123,
+  "address": "Mission Bay Boulevard North"
+  }
+
+  result, resp, err := client.UserApi.NewRide(lyft.Ride{
+     RideType: lyft.RideTypeLyft,
+     Origin:   origin,
+    Destination:   destination,
+  })
+
+
+**Ruby**
+
+.. code-block:: ruby
+
+  require 'uri'
+  require 'net/http'
+
+  url = URI("https://api.trello.com/1/checklists/id/cards")
+
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+  request = Net::HTTP::Get.new(url)
+
+  response = http.request(request)
+  puts response.read_body
+
+
+**Python**
+
+.. code-block:: python
+
+  import requests
+
+  url = "https://api.trello.com/1/checklists/id/cards"
+
+  response = requests.request("GET", url)
+
+  print(response.text)
+
+--------------------------------
+The ``Literalinclude`` Directive
+--------------------------------
+
+The ``Literalinclude`` directive allows you to point to a file so that you don't have a bunch of code filling up your .rst page. As with images and downloadable files, the target file is relative to the source document file.
+
+**Example** 
+
+Blah blahi blah text text text. 
+
+.. literalinclude:: PostAddress.json
+
+Blah blah blah blah text text.
+
+.. literalinclude:: lock.json
+   :language: http
+
+
+-------------
+Literal Block
+-------------
+
+Okay, a literal block allows text to be literally non-marked up. So therefore, this is good for showing code snippets. This line has a colon because the double colon markup is fully minimized, meaning there is no whitespace between end of sentence and the markup::
+
+  cmd line stuff. this is program code. 89 76 bit and byte. 
+
+   for a in [5,4,3,2,1]:   # this is program code, shown as-is
+        print a
+    print "it's..."
+    # a literal block continues until the indentation ends
+
+
+The double colon at the end of this line is not shown in the HTML because it is partially minimized, meaning there is whitespace at the end of the sentence and the markup ::
+
+  cmd line stuff. this is program code. 89 76 bit and byte. 
+
+   for a in [5,4,3,2,1]:   # this is program code, shown as-is
+        print a
+    print "it's..."
+    # a literal block continues until the indentation ends
+
+-------------
+Showing Curl
+-------------
+
+Seems you can show curl by using the ``bash`` code-block. 
+
+.. code-block:: bash
+
+   curl https://api.goshippo.com/addresses/d799c2679e644279b59fe661ac8fa488/ \
+      -H "Authorization: ShippoToken <API_TOKEN>"
+
+
+----------
+Code Role
+----------
+
+This is :code:`code that is highlighted via code role.`
+
+-----------------------------------------
+Using two single left quotes on each side
+-----------------------------------------
+
+You pass these credentials in the ``Authorization`` header in a ``get access token`` request
+
+
+
+
+
+
+
+
+
+
+
+

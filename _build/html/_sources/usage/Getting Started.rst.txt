@@ -1,0 +1,14 @@
+================
+Getting Started
+================
+
+Explains the first steps users must take to start using the API. 
+
+* Signing up for an account
+* Getting API keys
+* Making a request
+* Reviewing the endpoints available
+* Calling a specific endpoint
+* Show the general pattern for requests – List out the full resource URL that user can refer to when needed. The Full URL is not listed in each endpoint section because redundant. 
+
+
