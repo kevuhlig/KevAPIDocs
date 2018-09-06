@@ -3,13 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-===================================
-API Documentation
-===================================
-Welcome to the API documentation. 
+===========================================
+Kevin Uhlig's API Documentation with Sphinx
+===========================================
+
+This is my sandbox site on how I authored RESTful API non-reference and reference content in Sphinx. Utilize the ``Edit on GitHub`` link in top right corner of a page to see its Sphinx code. 
+
+**Note:** For the API reference section, I utilized `Shippo API <https://goshippo.com/docs/reference#addresses>`_ content. 
 
 .. toctree::
-   :caption: Introduction
+   :caption: API Non-Reference
 
    usage/Overview
    usage/Getting_Started
@@ -26,10 +29,3 @@ Welcome to the API documentation.
   
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
