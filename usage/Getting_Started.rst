@@ -195,7 +195,7 @@ Also, when developers implement the code into their applications or web pages, h
 
 GitHub - <https://developer.github.com/v3/#rate-limiting>
 
-Linkedin - <https://developer.linkedin.com/docs/rest-api?u=0#>
+Linkedin - <https://developer.linkedin.com/docs/guide/v2/concepts/rate-limits>
 
 
 ---------------------------
