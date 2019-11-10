@@ -166,7 +166,7 @@ The Address Object
 ``POST`` Create a New Address
 -----------------------------
 
-A ``POST`` to the ``/addresses`` resource to allow your application to create a new address object. Hello. Hello
+A ``POST`` to the ``/addresses`` resource to allow your application to create a new address object.
 
 
 .. raw:: html 
